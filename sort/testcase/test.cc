@@ -5,9 +5,22 @@
 extern vector<int> sort(vector<int> A);
 
 int main() {
+    vector<int> failed;
+
     for (int i = 0; i < test_amt; i++) {
-        assert(targets[i] == sort(test_data[i]));
+        if (targets[i] != sort(test_data[i])) {
+            failed.push_back(i);
+        }
     }
-    cout << "Passed.." << endl;
+    if (failed.size() == 0) {
+        cout << "All Pass.." << endl;
+    } else {
+        cout << "Faild..(";
+        for (int i : failed) {
+            cout << i << ",";
+        }
+        cout << ")" << endl;
+    }
+
     return 0;
 }
