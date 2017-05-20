@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cassert>
 #include "testcase.h"
 
 extern vector<int> sort(vector<int> A);
